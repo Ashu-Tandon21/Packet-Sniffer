@@ -9,7 +9,7 @@ sudo apt install scapy
 
 # To download and Run Script
 ```
-git clone https://github.com/Roshan-Poudel/Python-Scapy-Packet-Sniffer.git  
+git clone https://github.com/Ashu-Tandon21/Packet-Sniffer.git 
 ```
 ```
 cd Python-Scapy-Packet-Sniffer/  
