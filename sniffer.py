@@ -1,6 +1,6 @@
 #!/usr/bin/python
 
-from scapy.all import *
+from scapy.all import sniff, TCP, UDP, ICMP, IP, IPv6
 import socket
 import datetime
 import csv
@@ -191,6 +191,18 @@ def save_csv(packets, out_dir='.'):
     except Exception:
         # don't fail the main save if summary write fails
         pass
+
+        # Automatically run visualizer after saving CSVs
+        import subprocess
+        visualizer_path = os.path.join(START_CWD, 'visualize_ports.py')
+        if os.path.isfile(visualizer_path):
+            try:
+                print(f"Running visualizer: {visualizer_path}")
+                subprocess.run(['python3', visualizer_path, '--outdir', out_dir], check=False)
+            except Exception as e:
+                print(f"Visualizer failed: {e}")
+        else:
+            print(f"Visualizer script not found at {visualizer_path}")
 
 
 def save_summary(out_dir='.'):
