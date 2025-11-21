@@ -123,5 +123,4 @@ sudo setcap cap_net_raw+ep $(which python3)
 - If your CSV appears empty, confirm packets were actually printed to the terminal during the capture (you should see lines like "[2025-11-21 16:36:57.946041] UDP-OUT: ...").
 - If files are root-owned and you can't open them as your user, re-run the script with `--outdir /home/your-user/somewhere` or change ownership after capture.
 
-![Packet Screenshot](https://github.com/Roshan-Poudel/Python-Scapy-Packet-Sniffer/blob/master/packet%20screenshot.jpg)
 ```
